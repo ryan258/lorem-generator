@@ -6,7 +6,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('moo');
+    setText(data);
   };
 
   return (
@@ -27,16 +27,9 @@ function App() {
         </button>
       </form>
       <article className="lorem-text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur,
-          voluptates dolores corporis animi vel officia repellat sapiente! Ipsa,
-          nihil vel.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur,
-          voluptates dolores corporis animi vel officia repellat sapiente! Ipsa,
-          nihil vel.
-        </p>
+        {text.map((item, index) => {
+          return <p key={index}>{item}</p>;
+        })}
       </article>
     </section>
   );
